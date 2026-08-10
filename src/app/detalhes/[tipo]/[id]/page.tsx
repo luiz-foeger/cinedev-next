@@ -149,22 +149,22 @@ export default function DetalhesPage({ params }: { params: Promise<{ tipo: strin
               <h2 className="text-2xl font-black italic uppercase tracking-tighter border-l-4 border-amber-500 pl-4">Elenco Principal</h2>
               
               {/* [mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)] */}
-              <div className="flex gap-6 overflow-x-auto no-scrollbar pl-5 pb-6 [mask-image:linear-gradient(to_right,transparent,white_2%,white_98%,transparent)] md:[mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)]">
+              <div className="flex items-start gap-10 overflow-x-auto no-scrollbar pl-5 pb-6 [mask-image:linear-gradient(to_right,transparent,white_2%,white_98%,transparent)] md:[mask-image:linear-gradient(to_right,transparent,white_5%,white_95%,transparent)]">
                 {creditos.cast.slice(0, 15).map((ator: any) => (
                   <button style={{cursor: "pointer"}}
                     key={ator.id}
                     onClick={() => router.push(`/ator/${ator.id}`)}
                     className="flex-shrink-0 group text-center space-y-3 w-28"
                   >
-                    <div className="relative w-28 h-28 rounded-full overflow-hidden border-2 border-white/5 group-hover:border-amber-500 transition-all shadow-xl group-hover:shadow-amber-500/20">
+                    <div className="relative w-30 h-30 rounded-full overflow-hidden border-2 border-white/5 group-hover:border-amber-500 transition-all shadow-xl group-hover:shadow-amber-500/20">
                       <Image 
                         src={ator.profile_path ? `https://image.tmdb.org/t/p/w185${ator.profile_path}` : '/placeholder-actor.png'} 
                         alt={ator.name} fill className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500 scale-105"
                       />
                     </div>
                     <div className="space-y-1">
-                      <p className="text-xs font-black uppercase leading-tight line-clamp-2">{ator.name}</p>
-                      <p className="text-[10px] text-gray-500 italic line-clamp-1">{ator.character}</p>
+                      <p className="text-x font-black uppercase leading-tight line-clamp-2">{ator.name}</p>
+                      <p className="text-x text-gray-500 italic line-clamp-2">{ator.character}</p>
                     </div>
                   </button>
                 ))}
